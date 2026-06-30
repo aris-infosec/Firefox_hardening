@@ -36,14 +36,25 @@ Before touching settings: why Firefox, and not something else?
 | Browser | Engine | Strengths | Weaknesses |
 |---|---|---|---|
 | **Firefox** | Gecko (non-Chromium) | Last major independent engine; full extension support; deep `about:config` control; public security disclosure process | Telemetry on by default; 2025 Terms of Use drew criticism; needs manual hardening |
-| **Brave** | Chromium | Strong blocking out of the box; built-in Tor tab mode; fast | Shares Google's rendering engine; subject to Chromium's Manifest V3 limits; built-in crypto/wallet features add unused attack surface |
 | **LibreWolf** | Gecko (Firefox fork) | Hardened by default — telemetry stripped, `resistFingerprinting` pre-enabled, uBlock Origin often bundled | Smaller team than Mozilla; manual updates on some platforms; stricter defaults can break sites |
+| **Brave** | Chromium | Strong blocking out of the box (97%+ of trackers in independent tests); built-in Tor tab mode; fast | Shares Google's rendering engine; subject to Chromium's Manifest V3 limits; built-in crypto/wallet features add unused attack surface |
+| **Vivaldi** | Chromium | Deep customization; built-in tracker/ad blocker, mail, calendar, notes; no user tracking | Chromium engine; fingerprint resistance weaker than Brave or Mullvad; UI layer is proprietary, not fully open-source; heavier RAM use |
+| **Mullvad Browser** | Gecko (Tor Browser fork, no onion routing) | Tor-level anti-fingerprinting at normal speed; identical fingerprint across all users by design; no telemetry; built by Mullvad + Tor Project | No sync, no persistent bookmarks by default; needs a VPN for full benefit; small extension ecosystem; newer, less track record |
+| **Tor Browser** | Gecko (heavily hardened) | Strongest anonymity available; routes through the Tor network; defeats fingerprinting and hides your IP/location | Slow — multi-hop routing; many sites break or block Tor exit nodes; unsuitable for daily browsing, streaming, banking |
+| **Waterfox** | Gecko (Firefox fork) | Supports legacy XUL/XPCOM extensions Firefox dropped in 2017 | Niche use case; smaller maintainer base; not meaningfully more private than hardened Firefox |
+| **Safari** | WebKit | Apple's Intelligent Tracking Prevention blocks cross-site cookies; iCloud Private Relay masks IP (paid tier) | Apple-ecosystem only; still sends data to Apple services; weaker anti-fingerprinting than Mullvad/Tor; closed-source |
 | **Chrome / Edge** | Chromium | Best compatibility, DRM support | Built by ad companies; not a credible privacy choice regardless of settings |
 
 **Why this guide uses Firefox:**
-- It's the only browser here that lets you pick your own point between privacy and compatibility.
+- It's the most practical middle point between privacy and compatibility for a daily driver.
 - It uses an independently maintained engine, not a Chromium derivative.
+- It stays fully compatible with mainstream sites, unlike Tor or Mullvad Browser.
 - LibreWolf gets you most of this guide automatically — a legitimate shortcut if you don't want to configure things yourself.
+
+**Where the others fit instead:**
+- **Mullvad Browser or Tor Browser** — for genuinely high-risk or anonymous sessions, not daily browsing. Tor when you need to hide your IP/location outright; Mullvad Browser (paired with a VPN) when you want Tor-grade anti-fingerprinting at normal speed.
+- **Brave or Vivaldi** — reasonable if you need Chrome extension compatibility and want privacy with near-zero configuration. Vivaldi trades some fingerprint resistance for far more built-in tooling.
+- **Safari** — a sane default if you're Apple-only and don't want to install anything else, but not as hardened as the Firefox/Gecko options above.
 
 > **Honesty note on Mozilla:** the 2025 Terms of Use update and default-on telemetry have drawn real criticism. This guide exists *because* Firefox isn't private out of the box — not to pretend otherwise.
 
